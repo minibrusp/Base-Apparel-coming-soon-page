@@ -17,7 +17,7 @@
     <header>
       <a href="#"><img src="images/logo.svg" alt="Base Apparel logo"></a>
     </header>
-    <div class="hero__container">
+    <div class="hero__container overflow--hidden">
       <picture>
         <source media="(max-width: 750px)" srcset="images/hero-mobile.jpg">
         <img src="images/hero-mobile.jpg" alt="girl model">
@@ -26,17 +26,20 @@
     <main class="content">
       <div class="content__text">
         <h1><span>We're</span> coming soon</h1>
-        <p>Hello fellow shoppers! We're currently building our new fashion store. 
-          Add your email below to stay up-to-date with announcements and our launch deals.</p>
+        
       </div>
-      <div class="form">
-        <input type="email" placeholder="Email Address" class="email">
+      <form class="form">
+        <label for="email" class="promotional__paragraph">
+          Hello fellow shoppers! We're currently building our new fashion store. 
+          Add your email below to stay up-to-date with announcements and our launch deals.
+        </label>
+        <input type="email" placeholder="Email Address" class="email" id="email" required>
         <img src="images/icon-error.svg" alt="" class="error__icon">
         <button><img src="images/icon-arrow.svg" alt=""></button>
         <span>Please provide a valid email</span>
       </div>
     </main>
-  </div>
+  </form>
 
   <footer>
     <p class="attribution">
