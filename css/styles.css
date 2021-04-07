@@ -37,6 +37,7 @@ body {
 
 header {
    margin: 8vw;
+   animation: headerAnimation 1s;
 }
 
 header img {
@@ -50,17 +51,26 @@ header img {
    margin: 0 auto;
    display: flex;
    justify-content: center;
+   overflow: hidden;
 }
 
 picture img {
    width: 100%;
    max-width: 375px;
+   animation: hideMaster 1s,
+      heroAnimation 1s 1s,
+      fadeIn 1s 1s;
 }
 
 main.content {
    position: relative;
    margin: 60px 20px;
    text-align: center;
+}
+
+.content__text {
+   animation: hideMaster 2.1s,
+      contentTextAnimation 1s 2s;
 }
 
 .content__text h1 {
@@ -97,10 +107,14 @@ main.content {
    font-family: 'Josefin Sans', sans-serif;
    font-size: 15px;
    height: 3rem;
+   transition: .5s border;
+   animation: hideMaster 3.1s,
+      inputEmailAnimation 1s 3s;
 }
 
 .form .email:focus:invalid {
    border: 2px solid var(--primary-Soft-Red);
+   transition: .5s border;
 }
 
 .form .email::placeholder {
@@ -128,6 +142,8 @@ main.content {
    margin: 38px 0;
    box-shadow: 0px 5px 20px -1px rgb(0 0 0 / 15%);
    transition: background 1s;
+   animation: hideMaster 4.1s,
+      buttonAnimation 2s 4s;
 }
 
 .form button:hover {
@@ -162,4 +178,92 @@ main.content {
    /* font-size: 0.9375rem; */
    font-size: 0.875rem;
    color: var(--primary-Soft-Red);
+}
+
+
+.form .email:focus:invalid~.error__icon,
+.form .email:focus:invalid~span {
+   opacity: 1;
+   transition: opacity .5s;
+}
+
+.form .error__icon,
+.form span {
+   opacity: 0;
+   transition: opacity .5s;
+}
+
+
+footer {
+   font-size: 11px;
+   text-align: center;
+   color: var(--primary-Desaturated-Red);
+   letter-spacing: 1px;
+   animation: footerAnimation 5.9s;
+   transition: 1s transform;
+   background-color: black;
+   padding: 1rem;
+}
+
+footer a {
+   color: var(--primary-Soft-Red);
+   font-weight: 600;
+   text-decoration: none;
+}
+
+footer a:hover {
+   color: var(--neutral-Dark-Grayish-Red);
+}
+
+/* animations  */
+@keyframes headerAnimation {
+   0% {
+      transform: translateX(-200px);
+   }
+}
+
+@keyframes heroAnimation {
+   0% {
+      transform: translateY(-500px);
+   }
+}
+
+@keyframes contentTextAnimation {
+   0% {
+      transform: scale(0);
+   }
+}
+
+@keyframes inputEmailAnimation {
+   0% {
+      transform: scale(0);
+   }
+}
+
+@keyframes buttonAnimation {
+   0% {
+      transform: translateX(-273px);
+   }
+}
+
+@keyframes fadeIn {
+   0% {
+      opacity: 0;
+   }
+}
+
+@keyframes hideMaster {
+   0% {
+      opacity: 0;
+   }
+
+   99% {
+      opacity: 0;
+   }
+}
+
+@keyframes footerAnimation {
+   0% {
+      transform: translateY(-790px);
+   }
 }
