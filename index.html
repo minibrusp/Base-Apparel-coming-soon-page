@@ -7,6 +7,8 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Base Apparel coming soon page</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="scripts/scripts.js" defer></script>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
@@ -16,17 +18,35 @@
 </head>
 <body>
 
-  We're coming soon
+  <div class="grid__container">
+    <header>
+      <a href="#"><img src="images/logo.svg" alt="Base Apparel logo"></a>
+    </header>
+    <div class="hero__container">
+      <picture>
+        <source media="(max-width: 750px)" srcset="images/hero-mobile.jpg">
+        <img src="images/hero-mobile.jpg" alt="girl model">
+      </picture>
+    </div>
+    <main class="content">
+      <div class="content__text">
+        <h1><span>We're</span> coming soon</h1>
+        <p>Hello fellow shoppers! We're currently building our new fashion store. 
+          Add your email below to stay up-to-date with announcements and our launch deals.</p>
+      </div>
+      <div class="form">
+        <input type="email" placeholder="Email Address" class="email">
+        <img src="images/icon-error.svg" alt="" class="error__icon">
+        <button><img src="images/icon-arrow.svg" alt=""></button>
+        <span>Please provide a valid email</span>
+      </div>
+    </main>
+  </div>
 
-  Hello fellow shoppers! We're currently building our new fashion store. 
-  Add your email below to stay up-to-date with announcements and our launch deals.
-
-  Email Address
-  
   <footer>
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
+      Coded by <a href="https://www.frontendmentor.io/profile/minibrusp" target="_blank">XIII</a>.
     </p>
   </footer>
 </body>
