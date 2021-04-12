@@ -99,25 +99,36 @@ main.content {
    animation: hideMaster 3.1s,
       promotionalParagraphAnimation 1s 3s,
       fadeIn 1s 3s;
+   margin-bottom: 38px;
 }
 
-.form .email {
-   width: 100%;
-   margin: 38px 0 10px 0;
-   padding: 0px 100px 0 23px;
-   border-radius: 50px;
-   border: 1px solid var(--primary-Desaturated-Red);
-   outline: none;
+.form .input__container {
    position: relative;
+   display: grid;
+   grid-template-columns: 1fr 40px 65px;
+   justify-items: center;
+   align-items: center;
+}
+
+.input__container .email {
+   position: relative;
+   outline: none;
+   height: 3rem;
+   width: 100%;
+   margin: 0;
+   padding: 0px 100px 0 23px;
+   border: 1px solid var(--primary-Desaturated-Red);
+   border-radius: 50px;
    font-family: 'Josefin Sans', sans-serif;
    font-size: 15px;
-   height: 3rem;
+   grid-column: 1/4;
+   grid-row: 1/2;
    transition: .5s border;
    animation: hideMaster 4.1s,
       inputEmailAnimation 1s 4s;
 }
 
-.form .email:focus:invalid {
+.input__container .email__error--show {
    border: 2px solid var(--primary-Soft-Red);
    transition: .5s border;
 }
@@ -128,22 +139,21 @@ main.content {
 }
 
 .form button {
+   padding: 13.5px 25px;
    outline: none;
-   border: none;
-   padding: 0;
-   cursor: pointer;
    display: inline-flex;
    justify-content: center;
    align-items: center;
+   border: none;
+   border-radius: 50px;
    background-color: transparent;
    background: linear-gradient(to left, hsl(0, 74%, 74%), hsl(0, 80%, 86%));
    background-position: top right;
    background-size: 200% auto;
-   padding: 13.5px 25px;
-   border-radius: 50px;
-   position: absolute;
-   right: 0px;
-   margin: 38px 0;
+   grid-column: 3/4;
+   grid-row: 1/2;
+   z-index: 1;
+   cursor: pointer;
    box-shadow: 0px 5px 20px -1px rgb(0 0 0 / 15%);
    transition: background 1s;
    animation: hideMaster 5.1s,
@@ -167,10 +177,9 @@ main.content {
 }
 
 .form .error__icon {
-   position: absolute;
-   right: 75px;
-   top: 98px;
-   margin: 38px 0;
+   grid-column: 2/3;
+   grid-row: 1/2;
+   z-index: 1;
 }
 
 .form span {
@@ -178,24 +187,21 @@ main.content {
    text-align: left;
    width: 100%;
    display: block;
-   padding: 0 23px;
-   /* font-size: 0.9375rem; */
+   padding: 10px 23px;
    font-size: 0.875rem;
    color: var(--primary-Soft-Red);
+   grid-column: 1/4;
+   grid-row: 2/3;
 }
 
-
-.form .email:focus:invalid~.error__icon,
-.form .email:focus:invalid~span {
-   opacity: 1;
-   transition: opacity .5s;
-}
-
-.form .error__icon,
-.form span {
+.input__error--hide {
    opacity: 0;
+}
+
+.input__error--transition {
    transition: opacity .5s;
 }
+
 
 .overflow--hidden {
    overflow: hidden;
