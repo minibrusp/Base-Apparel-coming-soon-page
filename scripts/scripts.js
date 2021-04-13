@@ -2,12 +2,12 @@
    'use strict';
 
    // removes overflow hidden on hero__container
-   (()=> {
-      let heroContainer = document.querySelector('.hero__container');
-      setTimeout(() => {
-         heroContainer.classList.remove('overflow--hidden');
-      },6500);
-   })();
+   // (()=> {
+   //    let heroContainer = document.querySelector('.hero__container');
+   //    setTimeout(() => {
+   //       heroContainer.classList.remove('overflow--hidden');
+   //    },6500);
+   // })();
 
 
       let errorIcon = document.querySelector('.error__icon');

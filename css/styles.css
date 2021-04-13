@@ -123,6 +123,7 @@ main.content {
    font-size: 15px;
    grid-column: 1/4;
    grid-row: 1/2;
+   background: var(--Linear-135-Gradient1);
    transition: .5s border;
    animation: hideMaster 4.1s,
       inputEmailAnimation 1s 4s;
@@ -217,6 +218,7 @@ footer {
    transition: 1s transform;
    background-color: black;
    padding: 1rem;
+   position: relative;
 }
 
 footer a {
@@ -292,8 +294,218 @@ footer a:hover {
    }
 }
 
+/* media queries  */
+
+@media screen and (max-width: 280px) {
+   main.content {
+      padding: 60px 2vw;
+   }
+}
+
 @media screen and (width:375px) {
    .hero__container picture {
       max-height: 235px;
+   }
+}
+
+@media screen and (min-width: 375px) {
+   /* body {
+      height: 100vh;
+   } */
+}
+
+@media screen and (min-width: 500px) {
+   header {
+      margin: 5vw;
+   }
+
+   .content__text h1 {
+      line-height: 1.1;
+      max-width: 20rem;
+      margin-left: auto;
+      margin-right: auto;
+   }
+
+   .content__text h1 span {
+      display: block;
+   }
+
+   .form .promotional__paragraph {
+      max-width: 325px;
+      margin: 0 auto 38px auto
+   }
+
+   .form .input__container {
+      max-width: 22rem;
+      margin: 0 auto;
+      grid-template-columns: 1fr 40px 95px;
+   }
+
+   .input__container .email {
+      width: 99%;
+      padding: 0px 125px 0 23px;
+   }
+
+   .input__container button {
+      padding: 14.5px 40px;
+   }
+}
+
+@media screen and (min-width: 750px) {
+   body {
+      background-image: url(../images/bg-pattern-desktop.svg), var(--Linear-135-Gradient1);
+   }
+
+   .grid__container {
+      display: grid;
+      grid-template-areas: "header photo"
+         "main photo";
+      grid-template-columns: 1fr .9fr;
+      height: 100vh;
+      margin-left: 5vw;
+   }
+
+   header {
+      grid-area: header;
+      margin: 0;
+      align-self: center;
+   }
+
+   header img {
+      max-width: 7.438rem;
+   }
+
+   .hero__container {
+      grid-area: photo;
+   }
+
+   picture img {
+      max-width: unset;
+      height: 100%;
+      animation: hideMaster 2.1s,
+         heroAnimation 1s 1.8s,
+         fadeIn 1s;
+   }
+
+   main.content {
+      background: none;
+      grid-area: main;
+      margin: 0 auto 0 0;
+      padding: 0;
+      text-align: left;
+   }
+
+   .content__text h1 {
+      font-size: 3rem;
+      margin: 40px auto;
+      animation: hideMaster 1.1s,
+         headerOneAnimation 2s 1s;
+   }
+
+   .form .promotional__paragraph {
+      font-size: 1rem;
+      margin: 0 auto 47px auto;
+      animation: hideMaster 3.1s,
+         promotionalParagraphAnimation 1s 3s,
+         fadeIn 1s 3s;
+   }
+
+   .input__container .email {
+      font-size: 1rem;
+   }
+
+   .input__container button {
+      animation: hideMaster 5.1s,
+         buttonAnimation 2s 5s;
+   }
+
+   @keyframes headerOneAnimation {
+      0% {
+         transform: translateX(33vw) translateY(5vw) scale(0);
+      }
+
+      50% {
+         transform: translateX(33vw) translateY(5vw) scale(2);
+      }
+   }
+
+   @keyframes heroAnimation {
+      0% {
+         transform: translateX(500px);
+      }
+   }
+
+   @keyframes promotionalParagraphAnimation {
+      0% {
+         transform: translateX(-500px);
+      }
+   }
+
+   @keyframes buttonAnimation {
+      0% {
+         transform: translateX(-335px);
+         opacity: 0;
+      }
+
+      20% {
+         opacity: 0;
+      }
+
+      30% {
+         opacity: 1;
+      }
+   }
+
+}
+
+@media screen and (min-width: 850px) {
+   .grid__container {
+      margin-left: 10vw;
+   }
+
+}
+
+@media screen and (min-width: 1000px) {
+
+   .grid__container {
+      margin-left: 10vw;
+   }
+
+   header img {
+      max-width: 8.438rem;
+   }
+
+   .content__text h1 {
+      margin-left: 0;
+      font-size: 4rem;
+      font-size: 3.5rem;
+      letter-spacing: 1.2rem;
+   }
+
+   .form .promotional__paragraph {
+      max-width: 435px;
+   }
+
+   .form .input__container {
+      max-width: 27rem;
+      margin: 0;
+   }
+}
+
+@media screen and (min-width: 1100px) {
+   .grid__container {
+      margin-left: 10vw;
+   }
+}
+
+@media screen and (min-width: 1300px) {
+   .grid__container {
+      margin-left: 12vw;
+   }
+}
+
+@media screen and (min-width: 1440px) {
+   picture img {
+      width: 634px;
    }
 }
