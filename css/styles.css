@@ -382,8 +382,8 @@ footer a:hover {
    picture img {
       max-width: unset;
       height: 100%;
-      animation: hideMaster 2.1s,
-         heroAnimation 1s 1.8s,
+      animation: hideMaster 2s,
+         heroAnimation 1.2s 1.9s,
          fadeIn 1s;
    }
 
