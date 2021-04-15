@@ -354,6 +354,8 @@ footer a:hover {
 @media screen and (min-width: 750px) {
    body {
       background-image: url(../images/bg-pattern-desktop.svg), var(--Linear-135-Gradient1);
+      background-repeat: no-repeat;
+      background-size: contain;
    }
 
    .grid__container {
